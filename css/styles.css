@@ -1,112 +1,90 @@
-/* 1) Make widths include padding so columns don't overflow */
+/* --- Force page background & sizing --- */
+html, body { height: 100%; }
 * { box-sizing: border-box; }
 
-/* 2) Content wrapper should not float, and give it some padding around the cards */
-#content-wrapper{
-  background: url("../images/repeating.png") repeat;
-  float: none;         /* was: float:left; -> drop it */
-  width: 100%;
-  padding: 24px;       /* space around the two cards */
-  overflow: hidden;    /* simple clearfix */
-}
-
-/* 3) Exact two-column sizes that fit in 960px with the gutter */
-#main-content{
-  float: left;
-  width: 640px;        /* was 715px (+padding/margins = overflow) */
-  margin-right: 18px;  /* gutter between columns */
-  background: #fff;    /* white card */
-  padding: 18px 20px 10px;
-  box-shadow: 0 1px 2px rgba(0,0,0,.25);
-}
-
-#side-content{
-  float: right;
-  width: 260px;        /* was 200px (too narrow for the comp) */
-  background: #fff;    /* white card */
-  padding: 14px 16px;
-  box-shadow: 0 1px 2px rgba(0,0,0,.25);
-  min-height: 150px;
-}
-
-/* 4) The big gotcha: don't make the video wider than the left column */
-#center{
-  width: auto;         /* was 960px; this forced the left column too wide */
-  text-align: center;
-}
-#center iframe{
-  display: inline-block;
-  border: none;
-}
-
-/* 5) The sticker image on the right: smaller + white frame */
-.image-r{
-  float: right;
-  max-width: 230px;    /* was 300px; comp shows smaller */
-  margin: 8px 0 12px 16px;
-  border: 6px solid #fff;
-  outline: 1px solid #ccc;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,.25);
-  height: auto;
-}
-
-/* 6) Header & background (for completeness) */
 body{
   margin:0;
   color:#111;
-  background:#2b2b2b url("../images/repeating.png") repeat;
+  line-height:1.5;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  /* IMPORTANT: use the correct relative path from /css/ to /images/ */
+  background:#2b2b2b url("../images/repeating.png") repeat;  /* orange diagonals */
 }
+
+/* The frame should NOT paint the whole page white */
+#page-wrapper{
+  background: #161616;   /* thin dark border feel */
+}
+
+/* Wrapper around the two cards: never white, don’t float the whole thing */
+#content-wrapper{
+  background: transparent;        /* ensure no white wash */
+  float: none;                    /* was float:left; — drop it */
+  width: 100%;
+  padding: 24px;                  /* space around cards */
+  overflow: hidden;               /* clearfix */
+}
+
+/* Exact two-column sizes that fit side-by-side */
+#main-content{
+  float:left;
+  width:640px;                    /* safe width */
+  margin-right:18px;              /* gutter */
+  background:#fff;                /* white card */
+  padding:18px 20px 10px;
+  box-shadow:0 1px 2px rgba(0,0,0,.25);
+}
+
+#side-content{
+  float:right;
+  width:260px;                    /* sidebar card */
+  background:#fff;                /* white card */
+  padding:14px 16px;
+  box-shadow:0 1px 2px rgba(0,0,0,.25);
+  min-height:150px;
+}
+
+/* Don’t let the video blow the left column wider than 640px */
+#center{ width:auto; text-align:center; }
+#center iframe{ display:inline-block; border:none; max-width:100%; }
+
+/* Sticker image: smaller + white frame */
+.image-r{
+  float:right;
+  max-width:230px;
+  margin:8px 0 12px 16px;
+  border:6px solid #fff;
+  outline:1px solid #ccc;
+  background:#fff;
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
+  height:auto;
+}
+
+/* Header texture: make sure filename matches your folder (png, not jpg) */
 #header{
   position:relative;
   margin-top:40px;
   border-radius:12px 12px 0 0;
-  background:#000 url("../images/black.png") center/cover no-repeat;
+  background:#000 url("../images/black.png") center/cover no-repeat;  /* was black.jpg */
   padding:18px 20px 14px;
   border-bottom:4px solid #333;
 }
 #header h1{
-  position: static;          /* avoid fragile absolute placement */
-  display: inline-block;
-  margin-left: 18px;
-  vertical-align: middle;
-  font: 700 42px/1 'Devonshire', cursive;
+  display:inline-block;           /* avoid absolute “guesswork” */
+  margin:0 0 0 18px;
+  vertical-align:middle;
+  font:700 42px/1 'Devonshire', cursive;
   color:#ff6b00;
   text-shadow:0 1px 0 #000;
 }
 #header a#logo1 img{
-  height:64px;
-  vertical-align: middle;
-  margin: 20px 0 20px 20px;
+  height:64px; vertical-align:middle; margin:20px 0 20px 20px;
 }
 
-/* 7) Nav hover to match the comp vibe (optional) */
-#main-nav{
-  background:#1e1e1e;
-  border-top:1px solid #000;
-  border-bottom:1px solid #000;
-}
-#main-nav ul{
-  list-style:none; margin:0; padding:0 16px;
-  display:flex; gap:24px;
-}
-#main-nav ul li a{
-  display:block; padding:9px 0;
-  color:#e6e6e6; text-decoration:none; font-weight:600;
-}
-#main-nav ul li a:hover{ color:#ff6b00; text-decoration: underline; }
-
-/* 8) Big H2 inside the left card only */
-h2 strong{ display:block; font-size:48px; line-height:1.1; margin:4px 0 12px; }
-
-/* 9) Footer as a dark bar */
-#footer{
-  clear: both;
-  background:#1e1e1e;
-  color:#eee;
-  text-align:center;
-  padding:12px 14px;
-  margin-top:18px;
-  border-top:1px solid #000;
+/* Make it fit on phones so it won’t feel zoomed-in */
+@media (max-width: 980px){
+  #page-wrapper{ width:auto; margin:0 10px; }
+  #content-wrapper{ padding:12px; }
+  #main-content, #side-content{ float:none; width:auto; margin:0 0 12px; }
+  .image-r{ float:none; margin:10px auto; display:block; max-width:70%; }
 }
