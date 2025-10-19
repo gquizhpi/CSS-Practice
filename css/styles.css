@@ -1,82 +1,142 @@
-/* === force-load and layout === */
-*{ box-sizing:border-box; }
-html,body{ margin:0; height:100%; }
+/* === GLOBAL RESETS === */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
 
-/* 1) Full-page black texture */
-body{
-  background:#000 url("../images/black.jpg") center top repeat;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  color:#111; line-height:1.5;
+/* === PAGE BACKGROUND === */
+body {
+  background: #000 url("../images/black.jpg") center top repeat;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+  line-height: 1.5;
 }
 
-/* 2) Keep the frame centered */
-#page-wrapper{
-  width:960px;
-  margin:0 auto;              /* this centers it */
-  background:transparent;
+/* === PAGE WRAPPER === */
+#page-wrapper {
+  width: 960px;
+  margin: 0 auto;
+  background: transparent;
 }
 
-/* 3) Orange diagonals must cover the content area */
-#content-wrapper{
-  background:url("../images/repeating.png") center top repeat;
-  width:100%;
-  padding:24px;
-  float:none;                  /* do NOT float the whole wrapper */
-  overflow:hidden;             /* clearfix for the columns */
+/* === HEADER === */
+#header {
+  position: relative;
+  margin-top: 40px;
+  border-radius: 12px 12px 0 0;
 }
 
-/* 4) Exact two columns so the sidebar sits at the top-right */
-#main-content{
-  float:left;
-  width:640px;
-  margin-right:18px;
-  padding:18px 20px 10px;
-  background:transparent;      /* no white card */
-}
-#side-content{
-  float:right;
-  width:260px;
-  padding:14px 16px;
-  background:transparent;      /* transparent over diagonals */
-  color:#fff;                  /* readable on dark bg */
+#header a#logo1 img {
+  height: 64px;
+  vertical-align: middle;
+  margin: 20px;
 }
 
-/* 5) Nav styles (if your links are blue, CSS wasn’t applying—this will show immediately) */
-#main-nav{
-  background:#1e1e1e;
-  border-top:1px solid #000; border-bottom:1px solid #000;
-}
-#main-nav ul{
-  list-style:none; margin:0; padding:0 16px;
-  display:flex; gap:24px;
-}
-#main-nav ul li a{
-  display:block; padding:9px 0;
-  color:#e6e6e6; text-decoration:none; font-weight:600;
-}
-#main-nav ul li a:hover{ color:#ff6b00; text-decoration:underline; }
-
-/* 6) White frame ONLY around the Main Squeeze image */
-.image-r{
-  float:right;
-  max-width:230px;
-  margin:8px 0 12px 16px;
-  background:#fff; padding:6px;
-  border:1px solid #ccc;
-  box-shadow:0 2px 6px rgba(0,0,0,.25);
-  height:auto;
+#header h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'Devonshire', cursive;
+  font-size: 42px;
+  color: #ff6b00;
+  margin: 0;
+  text-shadow: 0 1px 0 #000;
 }
 
-/* 7) Big heading */
-h2 strong{ display:block; font-size:48px; line-height:1.1; margin:4px 0 12px; }
+/* === NAVIGATION BAR === */
+#main-nav {
+  width: 100%;
+  background-color: #1e1e1e;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  text-align: center;
+}
 
-/* 8) Video should not widen the left column */
-#center{ width:auto; text-align:center; }
-#center iframe{ display:inline-block; max-width:100%; border:none; }
+#main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  justify-content: center;
+  gap: 25px;
+}
 
-/* 9) Footer */
-#footer{
-  clear:both;
-  background:#111; color:#ccc; text-align:center;
-  padding:12px 14px; border-top:1px solid #000;
+#main-nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+#main-nav ul li a:hover {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* === CONTENT AREA === */
+#content-wrapper {
+  background: url("../images/repeating.png") center top repeat;
+  padding: 12px;
+  overflow: hidden;
+}
+
+#main-content {
+  float: left;
+  width: 620px;
+  margin-right: 12px;
+  background: transparent;
+  box-shadow: none;
+  padding: 18px 20px 10px;
+}
+
+#side-content {
+  float: right;
+  width: 260px;
+  margin-top: 0;
+  background: transparent;
+  color: #eee;
+}
+
+#side-content a { color: #9fd0ff; }
+#side-content a:hover { color: #ff6b00; }
+
+/* === IMAGES === */
+.image-r {
+  float: right;
+  max-width: 220px;
+  margin: 8px 0 12px 16px;
+  background: #fff;
+  padding: 6px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  height: auto;
+}
+
+/* === TEXT === */
+h2 strong {
+  display: block;
+  font-size: 48px;
+  line-height: 1.1;
+  margin: 4px 0 12px;
+}
+
+/* === VIDEO === */
+#center {
+  width: auto;
+  text-align: center;
+}
+#center iframe {
+  display: inline-block;
+  max-width: 100%;
+  border: none;
+}
+
+/* === FOOTER === */
+#footer {
+  clear: both;
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 12px 14px;
+  border-top: 1px solid #000;
+  border-radius: 0 0 12px 12px;
 }
