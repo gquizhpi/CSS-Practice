@@ -109,4 +109,3 @@ h2 strong{ display: block; font-size: 48px; line-height: 1.1; margin: 4px 0 12px
   #main-content, #side-content{ float: none; width: auto; margin: 0 0 12px; }
   .image-r{ float: none; margin: 10px auto; display: block; max-width: 70%; }
 }
-#center iframe {border: 0;}
