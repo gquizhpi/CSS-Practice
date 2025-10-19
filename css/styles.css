@@ -1,4 +1,4 @@
-/* ===== Base & background ===== */
+
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; height: 100%; }
 
@@ -8,18 +8,18 @@ body{
   color:#111; line-height:1.5;
 }
 
-/* ===== Page frame ===== */
+
 #page-wrapper{
-  width:960px;
-  margin:0 auto;                 /* center the site */
-  background:transparent;        /* show black texture */
+  width:1200px;
+  margin:0 auto;                 
+  background:transparent;
 }
 
-/* ===== Header ===== */
+
 #header{
   position:relative;
   margin-top:40px;
-  padding:0 0 8px;               /* a little breathing room */
+  padding:0 0 8px;               
   border-bottom:4px solid #333;
 }
 
@@ -41,7 +41,7 @@ body{
   text-shadow:0 1px 1px #000;
 }
 
-/* ===== Nav (centered & thin) ===== */
+
 #main-nav{
   background:#111;               /* darker like the comp */
   padding:2px 0;                 /* thinner bar */
@@ -57,31 +57,31 @@ body{
 }
 #main-nav ul li a:hover{ color:#ff6b00; text-decoration:underline; }
 
-/* ===== Orange diagonal content area ===== */
+
 #content-wrapper{
   background:url("../images/repeating.png") center top repeat;
   padding:12px;                  /* small to ensure both columns fit */
   overflow:hidden;               /* clearfix for floats */
 }
 
-/* Left column: transparent (no white panel) */
+
 #main-content{
   float:left;
-  width:620px;                   /* 620 + 12 gutter + 260 = 892 <= 960-24 */
-  margin-right:12px;
+  width:780px;                   /* 620 + 12 gutter + 260 = 892 <= 960-24 */
+  margin-right:20px;
   padding:18px 20px 10px;
   background:transparent;
 }
 
-/* Right column: at top-right */
+
 #side-content{
   float:right;
-  width:260px;
+  width: 320px;
   margin-top:-6px;               /* nudge up to align with headline */
   background:transparent;
   color:#eee;
 }
-#side-content h3{ color:#fff; margin:0 0 8px; }
+#side-content h3{ color:black; margin:0 0 8px; }
 #news{ margin:0; padding-left:18px; }
 #news li{ margin:6px 0 12px; }
 #news a{ color:#9fd0ff; } 
@@ -104,8 +104,18 @@ h2 strong{
 }
 
 /* Video stays within left column */
-#center{ width:auto; text-align:center; }
-#center iframe{ display:inline-block; max-width:100%; border:none; }
+#center{ 
+  width:100%; 
+  text-align:center; 
+  clear: both;
+  margin: 20px 0;
+}
+#center iframe{ 
+  display:inline-block; 
+  max-width:100%; 
+  height:auto;
+  border:none; 
+}
 
 /* Footer */
 #footer{
