@@ -1,161 +1,112 @@
-/* ===== GLOBAL STYLES ===== */
-body {
-  margin: 0;
-  color: #111;
-  line-height: 1.5;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: #2b2b2b url("../images/repeating.png") repeat;  /* orange diagonals */
-}
+/* 1) Make widths include padding so columns don't overflow */
+* { box-sizing: border-box; }
 
-/* ===== PAGE WRAPPER ===== */
-#page-wrapper {
-  width: 960px;
-  margin: 0 auto;
-  background-color: #161616;       /* dark frame around the page */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-  border-radius: 12px 12px 0 0;
-}
-
-/* ===== HEADER ===== */
-#header {
-  position: relative;
-  margin-top: 40px;
-  border-radius: 12px 12px 0 0;
-  background: #000 url("../images/black.png") center/cover no-repeat;
-  padding: 18px 20px 14px;
-  border-bottom: 4px solid #333;
-}
-
-/* Header logo */
-#header a#logo1 img {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  height: 64px;
-}
-
-/* Header title */
-#header h1 {
-  position: absolute;
-  left: 420px;
-  top: 5px;
-  font-size: 3em;
-  font-family: 'Devonshire', cursive;
-  color: #ff6b00;                 /* bright orange */
-  text-shadow: 0 1px 0 #000;
-}
-
-/* Optional top link */
-#header #toplink {
-  text-decoration: none;
-  position: absolute;
-  top: -34px;
-  right: 10px;
-  color: white;
-  font-size: 1.8em;
-}
-
-/* ===== NAVIGATION ===== */
-#main-nav {
-  width: 100%;
-  background-color: #333;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-}
-
-#main-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  float: left;
-  position: relative;
-  left: 50%;
-}
-
-#main-nav ul li {
-  float: left;
-  position: relative;
-  right: 50%;
-}
-
-#main-nav ul li a {
-  padding: 10px 25px;
-  display: block;
-  text-decoration: none;
-  color: #ccc;
-}
-
-#main-nav ul li a:hover {
-  background-color: #ff6b00;     /* orange hover */
-  color: #fff;
-}
-
-/* ===== CONTENT AREA ===== */
-#content-wrapper {
+/* 2) Content wrapper should not float, and give it some padding around the cards */
+#content-wrapper{
   background: url("../images/repeating.png") repeat;
-  float: left;
+  float: none;         /* was: float:left; -> drop it */
   width: 100%;
-  padding-bottom: 20px;
+  padding: 24px;       /* space around the two cards */
+  overflow: hidden;    /* simple clearfix */
 }
 
-/* Main content (left column) */
-#main-content {
-  min-height: 300px;
-  width: 715px;
-  margin-right: 30px;
+/* 3) Exact two-column sizes that fit in 960px with the gutter */
+#main-content{
   float: left;
-  margin-left: 15px;
-  background-color: white;
-  padding: 15px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  width: 640px;        /* was 715px (+padding/margins = overflow) */
+  margin-right: 18px;  /* gutter between columns */
+  background: #fff;    /* white card */
+  padding: 18px 20px 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
 }
 
-/* Sidebar (right column) */
-#side-content {
+#side-content{
+  float: right;
+  width: 260px;        /* was 200px (too narrow for the comp) */
+  background: #fff;    /* white card */
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
   min-height: 150px;
-  width: 200px;
-  float: right;
-  background-color: white;
-  padding: 10px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
-/* Headings inside content */
-h2 strong {
-  font-size: 2em;
-  font-weight: 900;
+/* 4) The big gotcha: don't make the video wider than the left column */
+#center{
+  width: auto;         /* was 960px; this forced the left column too wide */
+  text-align: center;
+}
+#center iframe{
+  display: inline-block;
+  border: none;
 }
 
-/* Floated right image */
-.image-r {
+/* 5) The sticker image on the right: smaller + white frame */
+.image-r{
   float: right;
-  border: 6px solid white;
+  max-width: 230px;    /* was 300px; comp shows smaller */
+  margin: 8px 0 12px 16px;
+  border: 6px solid #fff;
   outline: 1px solid #ccc;
-  width: 250px;
-  padding: 5px;
-  background-color: white;
-  margin: 10px 0 10px 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  height: auto;
 }
 
-/* Centered video */
-#center {
-  width: 960px;
-  text-align: center;
+/* 6) Header & background (for completeness) */
+body{
+  margin:0;
+  color:#111;
+  background:#2b2b2b url("../images/repeating.png") repeat;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+#header{
+  position:relative;
+  margin-top:40px;
+  border-radius:12px 12px 0 0;
+  background:#000 url("../images/black.png") center/cover no-repeat;
+  padding:18px 20px 14px;
+  border-bottom:4px solid #333;
+}
+#header h1{
+  position: static;          /* avoid fragile absolute placement */
+  display: inline-block;
+  margin-left: 18px;
+  vertical-align: middle;
+  font: 700 42px/1 'Devonshire', cursive;
+  color:#ff6b00;
+  text-shadow:0 1px 0 #000;
+}
+#header a#logo1 img{
+  height:64px;
+  vertical-align: middle;
+  margin: 20px 0 20px 20px;
 }
 
-/* ===== FOOTER ===== */
-#footer {
-  background-color: #1e1e1e;
-  color: white;
-  text-align: center;
-  padding: 12px 14px;
+/* 7) Nav hover to match the comp vibe (optional) */
+#main-nav{
+  background:#1e1e1e;
+  border-top:1px solid #000;
+  border-bottom:1px solid #000;
+}
+#main-nav ul{
+  list-style:none; margin:0; padding:0 16px;
+  display:flex; gap:24px;
+}
+#main-nav ul li a{
+  display:block; padding:9px 0;
+  color:#e6e6e6; text-decoration:none; font-weight:600;
+}
+#main-nav ul li a:hover{ color:#ff6b00; text-decoration: underline; }
+
+/* 8) Big H2 inside the left card only */
+h2 strong{ display:block; font-size:48px; line-height:1.1; margin:4px 0 12px; }
+
+/* 9) Footer as a dark bar */
+#footer{
   clear: both;
-  border-top: 1px solid #000;
-}
-
-/* ===== STRONG TAG (emphasized text) ===== */
-strong {
-  font-weight: 900;
-  font-size: 48px;
+  background:#1e1e1e;
+  color:#eee;
+  text-align:center;
+  padding:12px 14px;
+  margin-top:18px;
+  border-top:1px solid #000;
 }
