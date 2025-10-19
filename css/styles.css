@@ -1,133 +1,150 @@
-
+/* ===== Base & background ===== */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; height: 100%; }
 
 body{
-  background:#000 url("../images/black.jpg") center top repeat;   /* full-page black texture */
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  color:#111; line-height:1.5;
+  background: #000 url("../images/black.jpg") center top repeat;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+  line-height: 1.5;
 }
 
-
+/* ===== Page frame ===== */
 #page-wrapper{
-  width:1200px;
-  margin:0 auto;                 
-  background:transparent;
+  width: clamp(960px, 92vw, 1400px);   /* responsive but bounded */
+  margin: 0 auto;
+  background: transparent;
 }
 
-
+/* ===== Header ===== */
 #header{
-  position:relative;
-  margin-top:40px;
-  padding:0 0 8px;               
-  border-bottom:4px solid #333;
+  position: relative;
+  margin-top: 24px;
+  padding: 0 0 8px;
+  border-bottom: 4px solid #333;
 }
 
 #header a#logo1 img{
-  height:64px;
-  vertical-align:middle;
+  height: 64px;
+  vertical-align: middle;
   margin: 20px 12px 0 12px;
 }
 
 #header h1{
-  display:inline-block;
-  vertical-align:middle;
+  display: inline-block;
+  vertical-align: middle;
   margin: 8px 0 0 6px;
-  font-family:'Devonshire', cursive;
-  font-weight:400;
-  font-size:44px;
-  line-height:1;
-  color:#ff6b00;                 /* the orange you want */
-  text-shadow:0 1px 1px #000;
+  font-family: 'Devonshire', cursive;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1;
+  color: #ff6b00;
+  text-shadow: 0 1px 1px #000;
 }
 
-
+/* ===== Nav (centered & thin) ===== */
 #main-nav{
-  background:#111;               /* darker like the comp */
-  padding:2px 0;                 /* thinner bar */
-  text-align:center;
+  background: #111;
+  padding: 2px 0;
+  text-align: center;
 }
 #main-nav ul{
-  list-style:none; margin:0; padding:0;
-  display:inline-flex; gap:25px; justify-content:center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 25px;
+  justify-content: center;
 }
 #main-nav ul li a{
-  display:inline-block; padding:6px 18px;
-  color:#ddd; text-decoration:none; font-weight:600; font-size:.95em;
+  display: inline-block;
+  padding: 6px 18px;
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
 }
-#main-nav ul li a:hover{ color:#ff6b00; text-decoration:underline; }
+#main-nav ul li a:hover{ color: #ff6b00; text-decoration: underline; }
 
-
+/* ===== Orange diagonal content area ===== */
 #content-wrapper{
-  background:url("../images/repeating.png") center top repeat;
-  padding:12px;                  /* small to ensure both columns fit */
-  overflow:hidden;               /* clearfix for floats */
+  background: url("../images/repeating.png") center top repeat;
+  padding: 12px;
+  overflow: hidden;                 /* clearfix for floats */
 }
 
-
+/* Left column (transparent) */
 #main-content{
-  float:left;
-  width:780px;                   /* 620 + 12 gutter + 260 = 892 <= 960-24 */
-  margin-right:20px;
-  padding:18px 20px 10px;
-  background:transparent;
+  float: left;
+  width: 68%;
+  margin-right: 2%;
+  padding: 18px 20px 10px;
+  background: transparent;
 }
 
-
+/* Right column (sidebar) */
 #side-content{
-  float:right;
-  width: 320px;
-  margin-top:-6px;               /* nudge up to align with headline */
-  background:transparent;
-  color:black;
+  float: right;
+  width: 30%;
+  margin-top: -6px;
+  background: #000;                 /* black box per your request */
+  color: #fff;
+  padding: 14px 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
 }
-#side-content h3{ color:black; margin:0 0 8px; }
-#news{ margin:0; padding-left:18px; }
-#news li{ margin:6px 0 12px; }
-#news a{ color:#9fd0ff; } 
-#news a:hover{ color:#ff6b00; }
+#side-content h3{
+  margin: 0 0 8px;
+  color: #ff6b00;
+  border-bottom: 2px solid #ff6b00;
+  padding-bottom: 6px;
+  font-size: 1.1rem;
+}
+#news{ margin: 0; padding-left: 18px; }
+#news li{ margin: 10px 0 6px; font-weight: 700; }
+#news a{ color: #ff6b00; text-decoration: none; }
+#news a:hover{ color: #fff; text-decoration: underline; }
+#side-content p{ margin: 2px 0 10px; color: #ccc; font-size: .9rem; }
 
 /* White frame ONLY around the sticker image */
 .image-r{
-  float:right;
-  max-width:220px;
-  margin:8px 0 12px 16px;
-  background:#fff; padding:6px;
-  border:1px solid #ccc;
-  box-shadow:0 2px 6px rgba(0,0,0,.25);
-  height:auto;
+  float: right;
+  max-width: 48%;
+  margin: 8px 0 12px 16px;
+  background: #fff;
+  padding: 6px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  height: auto;
 }
 
-/* Heading sizing like the comp */
+/* Headings */
 h2 strong{
-  display:block; font-size:48px; line-height:1.1; margin:4px 0 12px;
+  display: block;
+  font-size: 48px;
+  line-height: 1.1;
+  margin: 4px 0 12px;
 }
 
-/* Video stays within left column */
-#center{ 
-  width:100%; 
-  text-align:center; 
-  clear: both;
-  margin: 20px 0;
-}
-#center iframe{ 
-  display:inline-block; 
-  max-width:100%; 
-  height:auto;
-  border:none; 
-}
+/* Video centering */
+#center{ width: 100%; text-align: center; clear: both; margin: 20px 0; }
+#center iframe{ display: inline-block; max-width: 100%; height: auto; border: none; }
 
 /* Footer */
 #footer{
-  clear:both; background:#111; color:#ccc;
-  text-align:center; padding:12px 14px; border-top:1px solid #000;
-  border-radius:0 0 12px 12px;
+  clear: both;
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 12px 14px;
+  border-top: 1px solid #000;
+  border-radius: 0 0 12px 12px;
 }
 
-/* Small screens (optional) */
+/* Small screens */
 @media (max-width: 980px){
-  #page-wrapper{ width:auto; margin:0 10px; }
-  #content-wrapper{ padding:10px; }
-  #main-content, #side-content{ float:none; width:auto; margin:0 0 12px; }
-  .image-r{ float:none; margin:10px auto; display:block; max-width:70%; }
+  #page-wrapper{ width: auto; margin: 0 10px; }
+  #content-wrapper{ padding: 10px; }
+  #main-content, #side-content{ float: none; width: auto; margin: 0 0 12px; }
+  .image-r{ float: none; margin: 10px auto; display: block; max-width: 70%; }
 }
