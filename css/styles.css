@@ -79,7 +79,7 @@ body{
   width: 320px;
   margin-top:-6px;               /* nudge up to align with headline */
   background:transparent;
-  color:#eee;
+  color:black;
 }
 #side-content h3{ color:black; margin:0 0 8px; }
 #news{ margin:0; padding-left:18px; }
