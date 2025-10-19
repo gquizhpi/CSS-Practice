@@ -1,142 +1,123 @@
-/* === GLOBAL RESETS === */
+/* ===== Base & background ===== */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; height: 100%; }
 
-/* === PAGE BACKGROUND === */
-body {
-  background: #000 url("../images/black.jpg") center top repeat;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  color: #111;
-  line-height: 1.5;
+body{
+  background:#000 url("../images/black.jpg") center top repeat;   /* full-page black texture */
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:#111; line-height:1.5;
 }
 
-/* === PAGE WRAPPER === */
-#page-wrapper {
-  width: 960px;
-  margin: 0 auto;
-  background: transparent;
+/* ===== Page frame ===== */
+#page-wrapper{
+  width:960px;
+  margin:0 auto;                 /* center the site */
+  background:transparent;        /* show black texture */
 }
 
-/* === HEADER === */
-#header {
-  position: relative;
-  margin-top: 40px;
-  border-radius: 12px 12px 0 0;
+/* ===== Header ===== */
+#header{
+  position:relative;
+  margin-top:40px;
+  padding:0 0 8px;               /* a little breathing room */
+  border-bottom:4px solid #333;
 }
 
-#header a#logo1 img {
-  height: 64px;
-  vertical-align: middle;
-  margin: 20px;
+#header a#logo1 img{
+  height:64px;
+  vertical-align:middle;
+  margin: 20px 12px 0 12px;
 }
 
-#header h1 {
-  display: inline-block;
-  vertical-align: middle;
-  font-family: 'Devonshire', cursive;
-  font-size: 42px;
-  color: #ff6b00;
-  margin: 0;
-  text-shadow: 0 1px 0 #000;
+#header h1{
+  display:inline-block;
+  vertical-align:middle;
+  margin: 8px 0 0 6px;
+  font-family:'Devonshire', cursive;
+  font-weight:400;
+  font-size:44px;
+  line-height:1;
+  color:#ff6b00;                 /* the orange you want */
+  text-shadow:0 1px 1px #000;
 }
 
-/* === NAVIGATION BAR === */
-#main-nav {
-  width: 100%;
-  background-color: #1e1e1e;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  text-align: center;
+/* ===== Nav (centered & thin) ===== */
+#main-nav{
+  background:#111;               /* darker like the comp */
+  padding:2px 0;                 /* thinner bar */
+  text-align:center;
+}
+#main-nav ul{
+  list-style:none; margin:0; padding:0;
+  display:inline-flex; gap:25px; justify-content:center;
+}
+#main-nav ul li a{
+  display:inline-block; padding:6px 18px;
+  color:#ddd; text-decoration:none; font-weight:600; font-size:.95em;
+}
+#main-nav ul li a:hover{ color:#ff6b00; text-decoration:underline; }
+
+/* ===== Orange diagonal content area ===== */
+#content-wrapper{
+  background:url("../images/repeating.png") center top repeat;
+  padding:12px;                  /* small to ensure both columns fit */
+  overflow:hidden;               /* clearfix for floats */
 }
 
-#main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
-  justify-content: center;
-  gap: 25px;
+/* Left column: transparent (no white panel) */
+#main-content{
+  float:left;
+  width:620px;                   /* 620 + 12 gutter + 260 = 892 <= 960-24 */
+  margin-right:12px;
+  padding:18px 20px 10px;
+  background:transparent;
 }
 
-#main-nav ul li a {
-  display: inline-block;
-  padding: 10px 20px;
-  color: #ccc;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1em;
+/* Right column: at top-right */
+#side-content{
+  float:right;
+  width:260px;
+  margin-top:-6px;               /* nudge up to align with headline */
+  background:transparent;
+  color:#eee;
+}
+#side-content h3{ color:#fff; margin:0 0 8px; }
+#news{ margin:0; padding-left:18px; }
+#news li{ margin:6px 0 12px; }
+#news a{ color:#9fd0ff; } 
+#news a:hover{ color:#ff6b00; }
+
+/* White frame ONLY around the sticker image */
+.image-r{
+  float:right;
+  max-width:220px;
+  margin:8px 0 12px 16px;
+  background:#fff; padding:6px;
+  border:1px solid #ccc;
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
+  height:auto;
 }
 
-#main-nav ul li a:hover {
-  background-color: #ccc;
-  color: #333;
+/* Heading sizing like the comp */
+h2 strong{
+  display:block; font-size:48px; line-height:1.1; margin:4px 0 12px;
 }
 
-/* === CONTENT AREA === */
-#content-wrapper {
-  background: url("../images/repeating.png") center top repeat;
-  padding: 12px;
-  overflow: hidden;
+/* Video stays within left column */
+#center{ width:auto; text-align:center; }
+#center iframe{ display:inline-block; max-width:100%; border:none; }
+
+/* Footer */
+#footer{
+  clear:both; background:#111; color:#ccc;
+  text-align:center; padding:12px 14px; border-top:1px solid #000;
+  border-radius:0 0 12px 12px;
 }
 
-#main-content {
-  float: left;
-  width: 620px;
-  margin-right: 12px;
-  background: transparent;
-  box-shadow: none;
-  padding: 18px 20px 10px;
-}
-
-#side-content {
-  float: right;
-  width: 260px;
-  margin-top: 0;
-  background: transparent;
-  color: #eee;
-}
-
-#side-content a { color: #9fd0ff; }
-#side-content a:hover { color: #ff6b00; }
-
-/* === IMAGES === */
-.image-r {
-  float: right;
-  max-width: 220px;
-  margin: 8px 0 12px 16px;
-  background: #fff;
-  padding: 6px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 6px rgba(0,0,0,.25);
-  height: auto;
-}
-
-/* === TEXT === */
-h2 strong {
-  display: block;
-  font-size: 48px;
-  line-height: 1.1;
-  margin: 4px 0 12px;
-}
-
-/* === VIDEO === */
-#center {
-  width: auto;
-  text-align: center;
-}
-#center iframe {
-  display: inline-block;
-  max-width: 100%;
-  border: none;
-}
-
-/* === FOOTER === */
-#footer {
-  clear: both;
-  background: #111;
-  color: #ccc;
-  text-align: center;
-  padding: 12px 14px;
-  border-top: 1px solid #000;
-  border-radius: 0 0 12px 12px;
+/* Small screens (optional) */
+@media (max-width: 980px){
+  #page-wrapper{ width:auto; margin:0 10px; }
+  #content-wrapper{ padding:10px; }
+  #main-content, #side-content{ float:none; width:auto; margin:0 0 12px; }
+  .image-r{ float:none; margin:10px auto; display:block; max-width:70%; }
 }

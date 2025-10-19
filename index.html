@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Demo Site</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Devonshire&display=swap" rel="stylesheet">
 
-  <!-- CSS Files -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/styles.css"> 
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
   <div id="page-wrapper">
+
+    <!-- Header -->
     <header id="header">
       <a id="logo1" href="index.html">
         <img src="images/logo3.png" alt="ACME logo in red">
@@ -22,65 +23,65 @@
       <h1>My Demo Site</h1>
     </header>
 
+    <!-- Nav -->
     <nav id="main-nav">
       <ul>
-        <li><a href="http://www.iit.edu">IIT Home</a></li>
-        <li><a href="http://www.google.com">Google</a></li>
-        <li><a href="http://www.microsoft.com">Microsoft</a></li>
-        <li><a href="http://www.cnn.com">CNN</a></li>
-        <li><a href="http://admissions.iit.edu">IIT Admissions</a></li>
+        <li><a href="https://www.iit.edu">IIT Home</a></li>
+        <li><a href="https://www.google.com">Google</a></li>
+        <li><a href="https://www.microsoft.com">Microsoft</a></li>
+        <li><a href="https://www.cnn.com">CNN</a></li>
+        <li><a href="https://admissions.iit.edu">IIT Admissions</a></li>
       </ul>
     </nav>
 
+    <!-- Content area with orange diagonals -->
     <main id="content-wrapper">
+      <!-- Left column -->
       <div id="main-content">
         <h2><strong>This is our h2 Tag</strong></h2>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eveniet, perferendis, sed ab sequi molestias eum sint consectetur dicta praesentium ipsa repellat soluta placeat dolor! Accusantium impedit est explicabo harum aperiam!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, perferendis, sed ab sequi molestias eum sint consectetur dicta praesentium ipsa repellat soluta placeat dolor! Accusantium impedit est explicabo harum aperiam!</p>
 
+        <!-- white-framed sticker -->
         <img class="image-r" src="images/main.png" alt="Logo for Main Squeeze Juice Co. in black and white">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eveniet, perferendis, sed ab sequi molestias eum sint consectetur dicta praesentium ipsa repellat soluta placeat dolor! Accusantium impedit est explicabo harum aperiam!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, perferendis, sed ab sequi molestias eum sint consectetur dicta praesentium ipsa repellat soluta placeat dolor! Accusantium impedit est explicabo harum aperiam!</p>
 
         <ul>
-          <li>List 1</li>
-          <li>List 2</li>
-          <li>List 3</li>
-          <li>List 4</li>
+          <li>List 1</li><li>List 2</li><li>List 3</li><li>List 4</li>
         </ul>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eveniet, perferendis, sed ab sequi molestias eum sint consectetur dicta praesentium ipsa repellat soluta placeat dolor! Accusantium impedit est explicabo harum aperiam!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, perferendis, sed ab sequi molestias eum sint consectetur dicta praesentium ipsa repellat soluta placeat dolor! Accusantium impedit est explicabo harum aperiam!</p>
 
         <ul>
-          <li>List 1</li>
-          <li>List 2</li>
-          <li>List 3</li>
-          <li>List 4</li>
+          <li>List 1</li><li>List 2</li><li>List 3</li><li>List 4</li>
         </ul>
 
         <div id="center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/8LB3pIWmKQ8" title="How to write great image alt text" allowfullscreen></iframe>
+          <!-- Public example video to avoid "unavailable" -->
+          <iframe width="560" height="315"
+                  src="https://www.youtube.com/embed/2Xc9gXyf2G4"
+                  title="YouTube video player" allowfullscreen></iframe>
         </div>
       </div>
 
+      <!-- Right column -->
       <aside id="side-content">
         <h3>Interesting Articles</h3>
-        <ol>
-          <li><a href="#">Article 1</a></li>
-          <p>Preview of very interesting article article</p>
-          <li><a href="#">Article 2</a></li>
-          <p>Preview of very interesting article article</p>
-          <li><a href="#">Article 3</a></li>
-          <p>Preview of very interesting article article</p>
-          <li><a href="#">Article 4</a></li>
-          <p>Preview of very interesting article article</p>
+        <ol id="news">
+          <li><a href="#">Article 1</a><div><p>Preview of very interesting article article</p></div></li>
+          <li><a href="#">Article 2</a><div><p>Preview of very interesting article article</p></div></li>
+          <li><a href="#">Article 3</a><div><p>Preview of very interesting article article</p></div></li>
+          <li><a href="#">Article 4</a><div><p>Preview of very interesting article article</p></div></li>
         </ol>
       </aside>
     </main>
 
+    <!-- Footer -->
     <footer id="footer">
       Footer Content is here
     </footer>
+
   </div>
 </body>
 </html>
