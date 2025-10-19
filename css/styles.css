@@ -1,30 +1,20 @@
-/* ===== Global ===== */
+
 @import url('https://fonts.googleapis.com/css2?family=Devonshire&display=swap');
-
-:root{
-  --ink:#111;
-  --brand:#ff6b00;      /* orange accents */
-  --panel:#1e1e1e;      /* dark bars */
-  --paper:#ffffff;      /* white cards */
-}
-
-*{ box-sizing:border-box; }
 
 body{
   margin:0;
-  color:var(--ink);
+  color:#111;
   line-height:1.5;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 
-  /* page background: diagonal orange stripes */
+  /* page background = diagonal stripes */
   background:#2b2b2b url("../images/repeating.png") center top repeat;
 }
 
-/* ===== Frame ===== */
 #page-wrapper{
-  width:950px;
+  width:950px;                 /* comp width */
   margin:0 auto;
-  background:#161616;          /* dark frame around content */
+  background:#161616;          /* thin dark frame */
   padding:0 0 12px;
 }
 
@@ -32,109 +22,109 @@ body{
 #header{
   position:relative;
   padding:14px 18px 10px;
-  background:#000 url("../images/black.png") center/cover no-repeat;
+  background:#000 url("../images/black.png") center/cover no-repeat; /* header texture */
   border-bottom:4px solid #333;
 }
+
 #header #logo1 img{
   height:64px;
   vertical-align:middle;
   display:inline-block;
 }
+
 #header h1{
   display:inline-block;
   margin:0 0 0 18px;
   vertical-align:middle;
   font:700 42px/1 'Devonshire', cursive;
-  color:var(--brand);
+  color:#ff6b00;               /* bright orange from comp */
   text-shadow:0 1px 0 #000;
 }
 
 /* ===== Nav ===== */
 #main-nav{
-  background:var(--panel);
+  background:#1e1e1e;
   border-top:1px solid #000;
   border-bottom:1px solid #000;
 }
 #main-nav ul{
   list-style:none; margin:0; padding:0 16px;
-  display:flex; gap:24px;
+  display:flex; gap:24px;      /* simple centering & spacing */
 }
 #main-nav ul li a{
   display:block; padding:9px 0;
   color:#e6e6e6; text-decoration:none; font-weight:600;
 }
-#main-nav ul li a:hover{ color:var(--brand); text-decoration:underline; }
+#main-nav ul li a:hover{ color:#ff6b00; text-decoration:underline; }
 
 /* ===== Columns ===== */
 #content-wrapper{
   background:url("../images/repeating.png") center top repeat;
-  padding:24px;
+  padding:24px;                /* gutter around the cards */
 }
 
-/* exact sizing to match comp */
+/* left card */
 #main-content{
   float:left;
-  width:640px;                    /* Left card width */
-  background:var(--paper);
+  width:640px;                 /* matches comp */
+  background:#fff;
   padding:18px 20px 10px;
-  margin-right:18px;              /* gutter */
+  margin-right:18px;           /* gutter to sidebar */
   box-shadow:0 1px 2px rgba(0,0,0,.25);
 }
+
+/* right card */
 #side-content{
   float:right;
-  width:260px;                    /* Sidebar width */
-  background:var(--paper);
+  width:260px;
+  background:#fff;
   padding:14px 16px;
   box-shadow:0 1px 2px rgba(0,0,0,.25);
 }
 
-/* Headings & text spacing */
-h2 strong{
-  display:block;
-  font-size:48px;
-  line-height:1.1;
-  margin:4px 0 12px;
-}
+/* heading and text spacing */
+h2 strong{ display:block; font-size:48px; line-height:1.1; margin:4px 0 12px; }
 #main-content p{ margin:10px 0 12px; line-height:1.45; }
 #main-content ul{ margin:8px 0 14px 22px; }
 
-/* Right-floated sticker image */
+/* floated sticker image */
 .image-r{
   float:right;
   max-width:230px;
   margin:8px 0 12px 16px;
-  border:6px solid #fff;
-  outline:1px solid #ccc;
+  border:6px solid #fff;               /* white border */
+  outline:1px solid #ccc;              /* thin gray keyline */
   box-shadow:0 2px 6px rgba(0,0,0,.25);
+  background:#fff;
   height:auto;
 }
 
-/* Sidebar list */
+/* sidebar list styles (optional) */
 #side-content h3{ margin:6px 0 8px; }
 #news{ margin:0; padding-left:18px; }
 #news li{ margin:6px 0 12px; }
 #news a{ font-weight:700; }
 
-/* Centered video */
+/* centered video inside left card */
 #center{ text-align:center; }
 #center iframe{ display:inline-block; border:none; }
 
-/* Footer */
+/* footer bar */
 #footer{
   clear:both;
   background:#1e1e1e;
   color:#eee;
   text-align:center;
-  padding:12px 14px;
+  padding:12px 14px;           /* height via padding, not fixed px */
   margin-top:18px;
   border-top:1px solid #000;
 }
 
-/* Clear floats */
+/* clear the floats */
 #content-wrapper::after,
 #main-content::after{ content:""; display:block; clear:both; }
 
-/* Small screens (optional) */
+/* small screens (optional) */
 @media (max-width:980px){
   #page-wrapper{ width:auto; margin:0 10px; }
   #main-content,#side-content{ float:none; width:auto; }
