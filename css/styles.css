@@ -92,8 +92,8 @@ body{
 #side-content h3{ color:black; margin:0 0 8px; }
 #news{ margin:0; padding-left:18px; }
 #news li{ margin:6px 0 12px; }
-#news a{ color:#9fd0ff; } 
-#news a:hover{ color:#ff6b00; }
+#news a{ color:black } 
+#news a:hover{ color:#9fd0ff; }
 
 #news{ margin: 0; padding-left: 18px; }
 #news li{ margin: 10px 0 6px; font-weight: 700; }
