@@ -77,7 +77,7 @@ body{
 #news li{ margin: 10px 0 6px; font-weight: 700; }
 #news a{ color:#9fd0ff; text-decoration: none; }
 #news a:hover{ color: #fff; text-decoration: underline; }
-#side-content p{ margin: 2px 0 10px; color: #ccc; font-size: .9rem; }
+#side-content p{ margin: 2px 0 10px; color: black; font-size: .9rem; }
 
 /* White frame for the sticker image only */
 .image-r{
