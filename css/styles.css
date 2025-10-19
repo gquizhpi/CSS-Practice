@@ -82,24 +82,19 @@ body{
   background: transparent;
 }
 
-/* Right column (sidebar) */
 #side-content{
-  float: right;
-  width: 30%;
-  margin-top: -6px;
-  background: #000;                 /* black box per your request */
-  color: #fff;
-  padding: 14px 16px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  float:right;
+  width: 320px;
+  margin-top:-6px;               /* nudge up to align with headline */
+  background:transparent;
+  color:black;
 }
-#side-content h3{
-  margin: 0 0 8px;
-  color: #ff6b00;
-  border-bottom: 2px solid #ff6b00;
-  padding-bottom: 6px;
-  font-size: 1.1rem;
-}
+#side-content h3{ color:black; margin:0 0 8px; }
+#news{ margin:0; padding-left:18px; }
+#news li{ margin:6px 0 12px; }
+#news a{ color:#9fd0ff; } 
+#news a:hover{ color:#ff6b00; }
+
 #news{ margin: 0; padding-left: 18px; }
 #news li{ margin: 10px 0 6px; font-weight: 700; }
 #news a{ color: #ff6b00; text-decoration: none; }
