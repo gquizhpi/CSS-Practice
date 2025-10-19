@@ -79,6 +79,7 @@ body{
 #news a:hover{ color: #fff; text-decoration: underline; }
 #side-content p{ margin: 2px 0 10px; color: black; font-size: .9rem; }
 
+
 /* White frame for the sticker image only */
 .image-r{
   float: right;
@@ -108,3 +109,4 @@ h2 strong{ display: block; font-size: 48px; line-height: 1.1; margin: 4px 0 12px
   #main-content, #side-content{ float: none; width: auto; margin: 0 0 12px; }
   .image-r{ float: none; margin: 10px auto; display: block; max-width: 70%; }
 }
+#center iframe {border: 0;}
